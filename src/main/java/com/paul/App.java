@@ -8,14 +8,16 @@ public class App {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+
         Developer developer = (Developer) context.getBean("developer");
         developer.code();
-        System.out.println(developer.age = 21);
+        // developer.setAge(21);
+        System.out.println(developer.getAge());
 
-        // Singleton beans
-        Developer developer2 = (Developer) context.getBean("developer");
+
+       /* Developer developer2 = (Developer) context.getBean("developer");
         developer2.code();
-        System.out.println(developer2.age);
-
+        System.out.println(developer2.getAge());
+        */
     }
 }

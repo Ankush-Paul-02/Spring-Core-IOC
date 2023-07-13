@@ -3,6 +3,23 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="developer" class="com.paul.Developer"/>
+    <!--prototype will give different objects-->
+    <bean id="developer" class="com.paul.Developer" scope="prototype" autowire="byType">
+        <!--Setter injection-->
+        <!--<property name="age" value="21"/>-->
+        <!--<property name="computer" ref="computer"/>-->
+
+        <!--Constructor injection-->
+        <constructor-arg value="21"/>
+
+    </bean>
+
+    <bean id="laptop" class="com.paul.Laptop" primary="true">
+
+    </bean>
+
+    <bean id="desktop" class="com.paul.Desktop">
+
+    </bean>
 
 </beans>
